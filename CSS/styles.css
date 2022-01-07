@@ -1,0 +1,176 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --Red: hsl(0, 100%, 74%);
+  --Green: hsl(154, 59%, 51%);
+  --Blue: hsl(248, 32%, 49%);
+  --Dark-Blue: hsl(249, 10%, 26%);
+  --Grayish-Blue: hsl(246, 25%, 77%);
+  --type-first: "Poppins", sans-serif;
+}
+
+body {
+  font-size: 1rem;
+  background-color: var(--Red);
+  background-image: url("../images/bg-intro-desktop.png");
+  font-family: var(--type-first);
+}
+/* Main */
+.containerGrid {
+  max-width: 1100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 3rem auto;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.formDiv .call {
+  background-color: var(--Blue);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  padding: 1rem;
+  font-family: var(--type-first);
+  color: var(--Grayish-Blue);
+  box-shadow: 0 6px 2px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  font-weight: 300;
+}
+.call span {
+  font-weight: 600;
+  color: #fff;
+}
+.formDiv form {
+  width: 100%;
+  display: block;
+  padding: 2rem;
+  background-color: #fff;
+  box-shadow: 0 6px 2px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  text-align: center;
+}
+.formDiv form input {
+  display: block;
+  width: 100%;
+  padding: 1.1rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-weight: 700;
+  position: relative;
+}
+.formDiv form div {
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.formDiv form div.active::after {
+  content: "";
+  display: flex;
+  position: absolute;
+  width: 25px;
+  align-items: center;
+  height: 25px;
+  top: 20%;
+  background-image: url("../images/icon-error.svg");
+  background-repeat: no-repeat;
+  right: 5px;
+}
+
+.formDiv form input.active {
+  border: 1px solid red;
+}
+.formDiv form input:focus {
+  outline: none;
+  border: 2px solid;
+  border-color: var(--Grayish-Blue);
+}
+.formDiv form button {
+  display: block;
+  width: 100%;
+  padding: 0.9rem;
+  border-radius: 7px;
+  font-weight: 600;
+  border: 0;
+  text-transform: uppercase;
+  box-shadow: 0 4px 0 0px hsl(154, 59%, 47%);
+  color: #fff;
+  background-color: var(--Green);
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+
+.formDiv form button:hover {
+  background-color: hsl(154, 59%, 65%);
+}
+.formDiv form small {
+  font-size: 0.7rem;
+  color: var(--Grayish-Blue);
+  text-align: center;
+}
+.formDiv form small span {
+  color: var(--Red);
+  font-weight: 700;
+}
+
+/* INTRO */
+
+.intro-title {
+  font-size: 2.8rem;
+  line-height: 1.2;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+.intro p {
+  color: #fff;
+  font-weight: 400;
+  line-height: 1.4;
+}
+/* footer */
+footer {
+  padding: 0 1rem;
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+#firstNameSmall,
+#lastNameSmall,
+#paswordSmall,
+#emailAddresSmall {
+  color: red;
+  position: relative;
+  text-align: right;
+}
+
+/* responsive */
+
+@media (max-width: 615px) {
+  .containerGrid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+@media (max-width: 375px) {
+  .containerGrid {
+    margin: 1rem auto;
+  }
+  .intro {
+    text-align: center;
+  }
+  .intro-title {
+    font-size: 1.5rem;
+    max-width: 203px;
+    margin: 0 auto 1rem auto;
+  }
+  .formDiv form small {
+    display: block;
+  }
+}
