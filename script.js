@@ -24,12 +24,12 @@ const Form = {
 
   validate() {
     const { name, lastName, password, emailAddres } = Form.getValues();
-    if (name.trim() === "") {
+    if (name.length === 0) {
       Form.nameDiv.classList.add("active");
       Form.firstNameSmall.innerHTML = `first name cannot be empty`;
       Form.firstName.classList.add("active");
     }
-    Form.firstName.addEventListener("blur", (e) => {
+    Form.firstName.addEventListener("blur", () => {
       Form.firstNameSmall.innerHTML = ``;
       Form.nameDiv.classList.remove("active");
       Form.firstName.classList.remove("active");
